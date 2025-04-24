@@ -1,0 +1,23 @@
+{
+    "$schema": "./node_modules/wrangler/config-schema.json",
+    "name": "group-chat-ui",
+    "main": "./build/server/index.js",
+    "compatibility_date": "2024-11-01",
+    "compatibility_flags": ["nodejs_compat"],
+    "observability": {
+      "enabled": true
+    },
+    "upload_source_maps": true,
+    "assets": {
+      "directory": "./build/client"
+    },
+    "r2_buckets": [
+        {
+            "binding": "MESSAGE_ASSETS",
+            "bucket_name": "message-assets"
+        }
+    ],
+    "vars": {
+      "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
+    }
+  }

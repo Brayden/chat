@@ -1,0 +1,36 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "group-chat",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+	"migrations": [
+		{
+			"new_sqlite_classes": [
+                "AuthorizationDurableObject",
+				"ConversationDurableObject"
+			],
+			"tag": "v1"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+            {
+				"class_name": "AuthorizationDurableObject",
+				"name": "AUTHORIZATION_DURABLE_OBJECT"
+			},
+			{
+				"class_name": "ConversationDurableObject",
+				"name": "CONVERSATION_DURABLE_OBJECT"
+			}
+		]
+	},
+    "r2_buckets": [
+        {
+            "binding": "MESSAGE_ASSETS",
+            "bucket_name": "message-assets"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
