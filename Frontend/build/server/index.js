@@ -1,7 +1,7 @@
 import { createRequestHandler } from "react-router";
 const requestHandler = createRequestHandler(
   // @ts-expect-error - virtual module provided by React Router at build time
-  () => import("./assets/server-build-D91Mqdsa.js"),
+  () => import("./assets/server-build-Cu90aWP2.js"),
   "production"
 );
 const app = {
